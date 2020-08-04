@@ -14,6 +14,9 @@ const TempusDominusBootstrap4 = ($ => { // eslint-disable-line no-unused-vars
                 selector = $element.attr('href') || '';
                 selector = /^#[a-z]/i.test(selector) ? selector : null;
             }
+            
+            selector = selector.replace('.', '\\.');
+            
             $selector = $(selector);
             if ($selector.length === 0) {
                 return $selector;
